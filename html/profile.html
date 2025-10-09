@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="css/img/letter-s.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Profile</title>
+    <style>
+    :root {
+    --primary-green: #77e64c;
+    --secondary-green: #58c853;
+    --dark-bg: #1c1a1a;
+    --light-bg: #e3e3e3;
+    --white: #ffffff;
+    --text-color: #235347;
+    --text-dark: #333;
+    --text-light: #ffffff;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --radius: 10px;
+    }
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+    }
+
+    body {
+      background: #f3f8f3;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--text-color);
+      margin-bottom: 25px;
+    }
+
+    form label {
+      display: block;
+      font-weight: bold;
+      margin: 10px 0 5px;
+      color: #444;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+    
+    form select:focus-within {
+      border-radius: 8px;
+      outline: 1px solid var(--primary-green);
+    }
+
+    form textarea:focus-within {
+      border-radius: 8px;
+      outline: 1px solid var(--primary-green);
+    }
+
+    form input:focus-within {
+      border-radius: 8px;
+      outline: 1px solid var(--primary-green);
+    }
+
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px;
+    }
+
+    .form-row div {
+      flex: 1;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: #58c853;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button a {
+        text-decoration: none;
+        color: #fff;
+    }
+    button:hover {
+      transition: color 0.3s;
+      background: #69b665;
+    }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Create Your Profile</h1>
+    <form>
+      <!-- Personal Info -->
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" placeholder="Enter your full name" required>
+
+      <div class="form-row">
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter your phone number" required>
+        </div>
+      </div>
+
+      <label for="location">Location</label>
+      <input type="text" id="location" placeholder="City, Country">
+
+      <!-- Experience -->
+      <label for="experience">Work Experience</label>
+      <textarea id="experience" placeholder="Describe your work experience"></textarea>
+
+      <!-- Skills -->
+      <label for="skills">Skills</label>
+      <input type="text" id="skills" placeholder="e.g. JavaScript, UI/UX, Project Management">
+
+      <!-- Education -->
+      <label for="education">Education</label>
+      <textarea id="education" placeholder="List your educational background"></textarea>
+
+      <!-- Job Preferences -->
+      <label for="job-type">Preferred Job Type</label>
+      <select id="job-type">
+        <option value="">-- Select --</option>
+        <option value="fulltime">Full-Time</option>
+        <option value="parttime">Part-Time</option>
+        <option value="remote">Remote</option>
+        <option value="internship">Internship</option>
+      </select>
+
+  <!-- Upload CV -->
+  <label for="cv">Upload CV (PDF, DOCX, TXT)</label>
+  <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx,.txt">
+
+  <!-- Submit -->
+  <button type="submit"><a href="networks.html">Save Profile</a></button>
+</form>
+</body>
+</html>

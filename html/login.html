@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/css/img/letter-s.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <style></style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="form-container">
+            <form action="/php/login.php" method="post">
+                <h1>Login to Seek Jobs</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fab fa-google"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span style="font-size:12px;">or use email for registration</span>
+                <input type="email" name="email"  placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <i class="fa fa-eye" id="togglePassword" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+                <a href="#" style="margin-bottom: 20px;">Forgot Your Password?</a>
+                <button href="seekjobs.html">Login</button>
+            </form>
+    </div>
+    <div class="toggle-container">
+        <div class="toggle-panel">
+            <div class="toggle-content">
+            <h3>Welcome Back to Seek Jobs</h3>
+            <p>We are glad to see you again! Please log in to your account.<br>
+            Don't have an account? <a href="signup.html">Sign Up</a><br>
+            By loging in, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+  const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#password');
+
+  togglePassword.addEventListener('click', function () {
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+
+    // toggle eye / eye-slash
+    this.classList.toggle('fa-eye-slash');
+  });
+</script>
+</body>
+</html>

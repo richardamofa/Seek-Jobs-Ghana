@@ -1,0 +1,474 @@
+:root {
+    --primary-green: #77e64c;
+    --secondary-green: #58c853;
+    --bg1: #f3f8f3;
+    --bg2: #e9f1eb;
+    --dark-bg: #1c1a1a;
+    --light-bg: #e3e3e3;
+    --white: #ffffff;
+    --text-color: #235347;
+    --text-dark: #333;
+    --text-light: #ffffff;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --radius: 10px;
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --radius: 14px;
+    --shadow: 0 12px 40px rgba(8, 30, 80, 0.08);
+    --toast-bg: rgba(15, 23, 42, 0.95);
+    font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+    color: #0f172a;
+}
+
+header {
+    background: #f5f6f5;
+    border-bottom: 1px dotted #e3e3e3;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.logo a {
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav li a:hover,
+.nav li a.login {
+    color: var(--secondary-green);
+}
+
+.ham-menu {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.app {
+    max-width: 1200px;
+    margin: 28px auto;
+    padding: 20px;
+}
+
+
+h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+p.lead {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 18px;
+}
+
+
+.profile-card {
+    grid-column: span 3;
+    background: var(--card);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(8, 30, 80, 0.12);
+}
+
+.profile-pic {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f3f8f3, #f1fff1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--accent);
+  transition: transform 0.18s ease;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-name {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.profile-bio {
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+}
+
+.btn.ghost {
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  background: white;
+}
+
+/* Stats Section */
+.stats-wrap {
+  grid-column: span 9;
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.stat {
+  flex: 1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), var(--card));
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.14s ease;
+}
+
+.stat:hover {
+  transform: translateY(-6px);
+}
+
+.stat .label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.stat .value {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.stat .small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* People and Jobs Cards */
+.people-card {
+  grid-column: span 7;
+  background: var(--card);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--glass-border);
+}
+
+.jobs-card {
+  grid-column: span 5;
+  background: var(--card);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--glass-border);
+}
+
+/* Section Titles */
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.04);
+  background: transparent;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* People Grid */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px;
+}
+
+.person {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #eefbf0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.person:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(9, 30, 68, 0.06);
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #94f18f, #b9f4b8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.person .meta {
+  flex: 1;
+}
+
+.person .name {
+  font-weight: 700;
+}
+
+.person .muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Jobs List */
+.jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.job {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #eef2f7;
+  background: white;
+  transition: transform 0.12s ease;
+}
+
+.job:hover {
+  transform: translateY(-4px);
+}
+
+.job .company {
+  font-weight: 700;
+}
+
+.job .tags {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Right Column */
+.right-col {
+  grid-column: span 12;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Modal */
+.modal-bg {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 10, 20, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 80;
+}
+
+.modal {
+  width: 360px;
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 20px 60px rgba(6, 20, 60, 0.14);
+  animation: slideUp 0.28s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(12px) scale(0.995);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+input[type='text'],
+textarea,
+input[type='file'] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6eef8;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.modal .actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: var(--toast-bg);
+  color: white;
+  box-shadow: 0 10px 30px rgba(6, 20, 60, 0.3);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.24s ease, transform 0.24s ease;
+  z-index: 100;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Helpers */
+.muted {
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .profile-card {
+    grid-column: span 6;
+  }
+
+  .stats-wrap {
+    grid-column: span 6;
+    flex-direction: column;
+  }
+
+  .people-card {
+    grid-column: span 6;
+  }
+
+  .jobs-card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 600px) {
+  .people-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
