@@ -204,7 +204,7 @@
       document.body.style.overflow='auto';
     });
 
-    // --- SAVE EDIT PROFILE ---
+    // --- save edit profile ---
     saveEdit.addEventListener('click',()=>{
       const name = editName.value.trim() || 'User Name';
       const bio = editBio.value.trim() || 'No bio provided.';
@@ -250,7 +250,7 @@
       }
     });
 
-    // --- REMOVE PROFILE PICTURE ---
+    // --- remove profile button ---
     removePicBtn.addEventListener('click',()=>{
       profilePic.innerHTML = '';
       const initials = profileName.textContent.split(' ').map(n => n[0]).slice(0,2).join('');
@@ -263,7 +263,7 @@
       showToast('Profile picture removed');
     });
 
-    // --- Init ---
+    // --- init ---
     loadState();
     loadProfile();
     renderStats();
