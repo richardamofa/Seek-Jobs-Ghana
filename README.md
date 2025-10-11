@@ -30,7 +30,8 @@ It provides a complete ecosystem for professional growth, from job listings and 
 
 ## 💡 Vision
 
-To **empower Ghanaians** with easy access to career opportunities, mentorship, and professional connections — helping every user grow from job seeker to industry leader.
+To **empower Ghanaians** with easy access to career opportunities, mentorship, and professional connections, helping every user grow from job seeker to industry leader.
+Also serving as a middleman between the job seeker and the job recruiter. 
 
 ---
 
@@ -38,13 +39,13 @@ To **empower Ghanaians** with easy access to career opportunities, mentorship, a
 
 seek-jobs-ghana/
 │
-├── index.html # Homepage
-├── about.html # About section
+├── seekjobs.html # Homepage
+├── jobs.html # Jobs Page
 ├── career-resources/ # Resume, interview, and development guides
 ├── network/ # Networking area
 ├── assets/ # Images, CSS, JS files
-├── includes/ # PHP includes (header, footer, etc.)
-├── config/ # Database configuration
+├── PHP files/ # Welcome page, signup page, login page, logout page 
+├── db_connect.php/ # Database configuration
 └── contact.php # Contact form handler
 
 ## ⚙️ Setup Instructions
@@ -55,10 +56,10 @@ seek-jobs-ghana/
    cd seek-jobs-ghana
    
 2. Start your PHP local server
-   php -S localhost:8000
+   php -S localhost:8013
 
 3. Open your browser and visit
-http://localhost:8000
+http://localhost:8013 -- almost done
 
 ✨ Author
 
