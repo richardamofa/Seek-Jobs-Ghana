@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/css/img/letter-s.png" type="image/x-icon">
+    <link rel="icon" href="/php/img/letter-s.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -193,7 +193,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .toggle-panel {
-            background-image: url(login.jpg);
+            background-image: url(img/login.jpg);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -325,7 +325,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h3>Welcome Back to Seek Jobs</h3>
                     <p>
                         We are glad to see you again! Please log in to your account.<br>
-                        Don't have an account? <a href="signup.html">Sign Up</a><br>
+                        Don't have an account? <a href="/php/signup.php">Sign Up</a><br>
                         By logging in, you agree to our <a href="#">Terms of Service</a>
                         and <a href="#">Privacy Policy</a>.
                     </p>

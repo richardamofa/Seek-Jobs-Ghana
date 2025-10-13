@@ -3,7 +3,7 @@
   --secondary-green: #58c853;
   --bg1: #c4fac4;
   --bg2: #bbf3bb;
-  --card: #ecf4ee;
+  --card: #ffffff99;
   --muted: #1a1a1a;
   --accent: #77e64c;
   --accent-2: #71db6b;
@@ -199,6 +199,10 @@ p.lead {
   background: white;
 }
 
+.btn.ghost:hover {
+  background: #f6f6f6;
+}
+
 .btn.cancel:hover {
   color: #0e4613;
 }
@@ -219,8 +223,45 @@ p.lead {
 
 .btn.apply:hover {
   color: #fff;
-  background: #2fc727;
+  background: var(--accent);
 }
+
+.btn.save {
+  color: #494949;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn.save:hover {
+  color: #fff;
+  background: #58c853;
+}
+
+.btn.connect {
+  color: var(--text-light);
+  background: var(--primary-green);
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+  transition: color 0.2s , background 0.2s;
+}
+
+.btn.connect:hover {
+  background: var(--secondary-green);
+  color: var(--text-light);
+}
+
+.btn.connect:active {
+  background: var(--primary-green);
+}
+
+.btn.connected {
+  margin-left: -10px;
+  background: var(--light-bg);
+  color: var(--text-dark);
+}
+
 
 /* Stats Section */
 .stats-wrap {

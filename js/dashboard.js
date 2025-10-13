@@ -1,11 +1,11 @@
     // --- mock data ---
     const peopleMock = [
-      {id:1,name:'Aisha Mensah',title:'Frontend Engineer',mutuals:8},
-      {id:2,name:'Kwame Boateng',title:'Product Manager',mutuals:3},
-      {id:3,name:'Efua Asante',title:'Data Scientist',mutuals:12},
-      {id:4,name:'Daniel Owusu',title:'UX Designer',mutuals:5},
-      {id:5,name:'Rita Appiah',title:'Marketing Lead',mutuals:2},
-      {id:6,name:'Joseph Darko',title:'DevOps Engineer',mutuals:9}
+      {id:1,name:'Daniel Biggs',title:'Frontend Engineer',mutuals:8},
+      {id:2,name:'Andrea Opare',title:'Product Manager',mutuals:3},
+      {id:3,name:'Prince Ankrah',title:'Data Scientist',mutuals:12},
+      {id:4,name:'Belinda Amofa',title:'UX Designer',mutuals:5},
+      {id:5,name:'Peter Ofori',title:'Marketing Lead',mutuals:2},
+      {id:6,name:'Charles Nyarko',title:'DevOps Engineer',mutuals:9}
     ];
 
     const jobsMock = [
@@ -85,7 +85,7 @@
       jobsPendingEl.textContent = state.jobsPending.toLocaleString();
     }
 
-    // --- People & Jobs Rendering ---
+    // --- people & jobs rendering ---
     function renderPeople(){
       peopleList.innerHTML = '';
       state.people.forEach(p=>{
@@ -97,10 +97,16 @@
             <div class='name'>${p.name}</div>
             <div class='muted'>${p.title} • ${p.mutuals} mutuals</div>
           </div>
-          <div><button class='btn primary' data-id='${p.id}' data-action='connect'>Connect</button></div>
+          <div><button class='btn connect' data-id='${p.id}' data-action='connect'>Connect</button></div>
         `;
         peopleList.appendChild(wrapper);
       })
+      document.querySelectorAll('.btn.connect').forEach(button => {
+        button.addEventListener('click', () => {
+        button.textContent = "Connected";
+        button.classList.add('connected');
+    });
+    });
     }
 
     let currentFilter = 'all';
@@ -119,8 +125,8 @@
             <div class='tags muted'>${j.location} • ${j.status}</div>
           </div>
           <div style='display:flex;gap:8px'>
-            <button class='btn' data-id='${j.id}' data-action='apply'>${j.status==='open'?'Apply':(j.status==='applied'?'Applied':'Pending')}</button>
-            <button class='btn' data-id='${j.id}' data-action='save'>Save</button>
+            <button class='btn apply' data-id='${j.id}' data-action='apply'>${j.status==='open'?'Apply':(j.status==='applied'?'Applied':'Pending')}</button>
+            <button class='btn save' data-id='${j.id}' data-action='save'>Save</button>
           </div>
         `;
         jobsList.appendChild(el);
@@ -177,7 +183,7 @@
       addActivity('Shuffled people suggestions');
     });
 
-    document.getElementById('refreshPeople').addEventListener('click',()=>{
+    document.getElementById('refreshPeople').addEventListener('click',()=> {
       renderPeople();
       addActivity('Refreshed people suggestions');
     });
@@ -186,7 +192,7 @@
     document.getElementById('filterOpen').addEventListener('click',()=>{ currentFilter='open'; renderJobs(); });
     document.getElementById('filterApplied').addEventListener('click',()=>{ currentFilter='applied'; renderJobs(); });
 
-    // --- MODAL HANDLERS ---
+    // --- modal handlers ---
     editProfileBtn.addEventListener('click',()=>{
       editModal.style.display='flex';
       editName.value = profileName.textContent;
