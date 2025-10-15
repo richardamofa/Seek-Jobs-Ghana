@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (!$user) {
-        $error = "No account found with that email. <a href='signup.html'>Sign up here</a>";
+        $error = "No account found with that email. <a href='signup.php'>Sign up here</a>";
     } elseif (!password_verify($password, $user["password"])) {
         $error = "Wrong password. Try again.";
     }
