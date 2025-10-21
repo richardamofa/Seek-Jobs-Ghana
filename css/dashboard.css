@@ -262,6 +262,18 @@ p.lead {
   color: var(--text-dark);
 }
 
+.fa-solid.fa-right-from-bracket {
+  font-size: 20px;
+  transition: background 0.2s ease; 
+}
+
+.fa-solid.fa-right-from-bracket:hover {
+  color: #c0392b;
+}
+
+.fa-solid.fa-right-from-bracket:active {
+  color: #e74c3c;
+}
 
 /* Stats Section */
 .stats-wrap {
