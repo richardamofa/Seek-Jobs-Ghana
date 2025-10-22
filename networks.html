@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/css/img/letter-s.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/networks.css">
+    <link rel="icon" href="css/img/letter-s.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/networks.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -30,16 +30,16 @@
         <div class="main">
             <div class="profile-section">
             <div class="profile-card">
-                <div class="edit"><a href="profile.html">edit profile</a></div>
-                <img src="/css/img/softwareguy.jpg" alt="Profile Picture" class="profile-img">
-                <h2>richard amofa</h2>
-                <p class="profile-title">Software Engineer</p>
-                <p class="profile-bio">Passionate about building connections and helping others grow in tech. Always open to new opportunities and collaborations.</p>
-                <div class="profile-stats">
-                    <span><i class="fa-solid fa-paper-plane" style="color:#2eb1e5;"></i> Invites Sent: <strong>24</strong></span>
-                    <span><i class="fa-solid fa-user-group" style="color:#f3f8f3"></i> Connections: <strong>18</strong></span>
-                </div>
+                <div class="edit"><a href="dashboard.html">Edit Profile</a></di>
+                <div class="profile-pic">
+                <img id="networkProfilePic" src="" alt="Profile Picture">
             </div>
+                <h2 id="networkName">User Name</h2>
+                <p id="networkTitle" class="profile-title">Job Seeker</p>
+                <p id="networkBio" class="profile-bio">No bio provided.</p>
+            </div>
+            </div>
+
             <div class="profile-details">
                 <h3>Contact Information</h3>
                 <hr />
@@ -57,6 +57,23 @@
                 <li>Networking</li>
                 </ul>
             </div>
+            <div class="stats-wrap">
+                <div class="stat">
+                    <div class="label">Total Connections Made</div>
+                    <div id="connectionsMade" class="value">0</div>
+                    <div class="small">People you've connected with</div>
+                </div>
+                <div class="stat">
+                    <div class="label">Total Jobs Applied</div>
+                    <div id="jobsApplied" class="value">0</div>
+                    <div class="small">Applications submitted</div>
+                </div>
+                <div class="stat">
+                   <div class="label">Pending Applications</div>
+                   <div id="jobsPending" class="value">0</div>
+                   <div class="small">Awaiting response</div>
+                </div>
+            </div>
             </div>
 
             <div class="suggestion-section">
@@ -64,7 +81,7 @@
                 <hr />
                 <div class="suggestion-list">
                     <div class="suggestion-card">
-                        <img src="/css/img/data scientist.jpg" alt="Profile Picture" class="suggestion-img">
+                        <img src="css/img/data scientist.jpg" alt="Profile Picture" class="suggestion-img">
                         <div class="suggestion-info">
                             <h4>Prince Ankrah</h4>
                             <p>Data Analyst</p>
@@ -72,7 +89,7 @@
                         </div>
                     </div>
                     <div class="suggestion-card">
-                        <img src="/css/img/biggs.jpg" alt="Profile Picture" class="suggestion-img">
+                        <img src="css/img/biggs.jpg" alt="Profile Picture" class="suggestion-img">
                         <div class="suggestion-info">
                             <h4>Biggs Daniel</h4>
                             <p>Frontend Developer</p>
@@ -80,7 +97,7 @@
                         </div>
                     </div>
                     <div class="suggestion-card">
-                        <img src="/css/img/Charles.jpg" alt="Profile Picture" class="suggestion-img">
+                        <img src="css/img/Charles.jpg" alt="Profile Picture" class="suggestion-img">
                         <div class="suggestion-info">
                             <h4>Charles Nyarko</h4>
                             <p>Backend Developer</p>
@@ -88,7 +105,7 @@
                         </div>
                     </div>
                     <div class="suggestion-card">
-                        <img src="/css/img/Owiredua.jpg" alt="Profile Picture" class="suggestion-img">
+                        <img src="css/img/Owiredua.jpg" alt="Profile Picture" class="suggestion-img">
                         <div class="suggestion-info">
                             <h4>Hannah Oweirdua</h4>
                             <p>Project Manager</p>
@@ -96,7 +113,7 @@
                         </div>
                     </div>
                     <div class="suggestion-card">
-                        <img src="/css/img/welcome.jpg" alt="Profile Picture" class="suggestion-img">
+                        <img src="css/img/welcome.jpg" alt="Profile Picture" class="suggestion-img">
                         <div class="suggestion-info">
                             <h4>Vincentia</h4>
                             <p>JavaScript Developer</p>
@@ -104,7 +121,7 @@
                         </div>
                     </div>
                     <div class="suggestion-card">
-                        <img src="/css/img/interviewprep.jpg" alt="Profile Picture" class="suggestion-img">
+                        <img src="css/img/interviewprep.jpg" alt="Profile Picture" class="suggestion-img">
                         <div class="suggestion-info">
                             <h4>Andrea Nyann</h4>
                             <p>Software Developer</p>
@@ -116,27 +133,26 @@
 
 
                 <div class="advert-section">
-                    <h3>Ads</h3>
-                    <hr />
+                    <h3>Sponsored</h3>
                     <div class="advert-grid">
                         <div class="advert-card">
-                            <img src="/css/img/techsummit.jpg" alt="Advert 1" class="advert-img">
+                            <img src="css/img/techsummit.jpg" alt="Advert 1" class="advert-img">
                             <p>Join the next Tech Summit! Register now.</p>
                         </div>
                         <div class="advert-card">
-                            <img src="/css/img/bootcamp.jpg" alt="Advert 2" class="advert-img">
+                            <img src="css/img/bootcamp.jpg" alt="Advert 2" class="advert-img">
                             <p>Upgrade your skills with CodeGhana Bootcamp.</p>
                         </div>
                         <div class="advert-card">
-                            <img src="/css/img/cloud.jpg" alt="Advert 3" class="advert-img">
+                            <img src="css/img/cloud.jpg" alt="Advert 3" class="advert-img">
                             <p>Get certified in Cloud Computing. Enroll today!</p>
                         </div>
                         <div class="advert-card">
-                            <img src="/css/img/digitalmarketing.jpg" alt="Advert 4" class="advert-img">
+                            <img src="css/img/digitalmarketing.jpg" alt="Advert 4" class="advert-img">
                             <p>Attend the Digital Marketing Workshop this weekend.</p>
                         </div>
                         <div class="advert-card">
-                            <img src="/css/img/letter-s.png" alt="Advert 5" class="advert-img">
+                            <img src="css/img/letter-s.png" alt="Advert 5" class="advert-img">
                             <p>Explore remote tech jobs with Seek Jobs Ghana.</p>
                         </div>
                     </div>
@@ -148,7 +164,7 @@
             <p>Connect with professionals, explore mutual interests, and grow your network with purpose.</p>
             <div class="connect-grid">
                 <div class="connect-card">
-                    <img src="/css/img/bossfig1.jpg" alt="connect-card1">
+                    <img src="css/img/bossfig1.jpg" alt="connect-card1">
                     <div class="connect-info">
                         <h4>Emmanuel Boateng</h4>
                         <p>Mobile App Developer</p>
@@ -157,7 +173,7 @@
                     <div class="connect-btn" id="connect-btn"><i class="fa-solid fa-user-plus"></i> Connect</div>
                 </div>
                 <div class="connect-card">
-                    <img src="/css/img/contact us.jpg" alt="connect-card2">
+                    <img src="css/img/contact us.jpg" alt="connect-card2">
                     <div class="connect-info">
                         <h4>Linda Mensah</h4>
                         <p>Product Manager</p>
@@ -166,7 +182,7 @@
                     <div class="connect-btn"><i class="fa-solid fa-user-plus"></i> Connect</div>
                 </div>
                 <div class="connect-card">
-                    <img src="/css/img/figure1.jpg" alt="connect-card3">
+                    <img src="css/img/figure1.jpg" alt="connect-card3">
                     <div class="connect-info">
                         <h4>Kwame Owusu</h4>
                         <p>DevOps Engineer</p>
@@ -175,10 +191,19 @@
                     <div class="connect-btn"><i class="fa-solid fa-user-plus"></i> Connect</div>
                 </div>
                 <div class="connect-card">
-                    <img src="/css/img/graphic design.jpg" alt="connect-card4">
+                    <img src="css/img/graphic design.jpg" alt="connect-card4">
                     <div class="connect-info">
                         <h4>Akosua Serwaa</h4>
                         <p>Cybersecurity Analyst</p>
+                        <span><i class="fa-solid fa-location-dot"></i> Tamale, Ghana</span>
+                    </div>
+                    <div class="connect-btn"><i class="fa-solid fa-user-plus"></i> Connect</div>
+                </div>
+                <div class="connect-card">
+                    <img src="css/img/marketing.jpg" alt="connect-card4">
+                    <div class="connect-info">
+                        <h4>Fredrick Owusu</h4>
+                        <p>QA Engineer</p>
                         <span><i class="fa-solid fa-location-dot"></i> Tamale, Ghana</span>
                     </div>
                     <div class="connect-btn"><i class="fa-solid fa-user-plus"></i> Connect</div>
@@ -200,77 +225,6 @@
     </div>
 </footer>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-            // Hamburger Menu Toggle
-            const hamMenu = document.querySelector('.ham-menu');
-            const navBar = document.querySelector('nav .nav');
-            if (hamMenu && navBar) {
-                hamMenu.addEventListener('click', () => {
-                    navBar.classList.toggle('active');
-                });
-            }
-
-            // Smooth Scrolling for Navigation
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const targetId = this.getAttribute('href');
-                    if (
-                        targetId &&
-                        targetId.length > 1 &&
-                        document.querySelector(targetId)
-                    ) {
-                        e.preventDefault();
-                        const targetElement = document.querySelector(targetId);
-                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        // Close mobile nav if open
-                        if (navBar && navBar.classList.contains('active')) {
-                            navBar.classList.remove('active');
-                        }
-                    }
-                });
-            });
-        });
-
-        // Animation on Scroll (fadeIn effect)
-            function animateOnScroll() {
-              const sections = document.querySelectorAll('section');
-              sections.forEach(section => {
-              const sectionTop = section.getBoundingClientRect().top;
-              const windowHeight = window.innerHeight;
-              if (sectionTop < windowHeight * 0.85) {
-                section.classList.add('fadeIn');
-              } else {
-                section.classList.remove('fadeIn');
-              }
-              });
-            }
-            window.addEventListener('scroll', animateOnScroll);
-            window.addEventListener('load', animateOnScroll);
-            // Handle Connect button
-            document.querySelectorAll('.connect-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                    button.textContent = "Connected";
-                    button.classList.add('connected');
-                });
-            });
-
-            // Handle Accept/Ignore buttons
-            document.querySelectorAll('.accept-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                    const inviteItem = button.closest('li');
-                    inviteItem.remove();
-                });
-            });
-
-            document.querySelectorAll('.ignore-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                    const inviteItem = button.closest('li');
-                    inviteItem.remove();
-                });
-            });
-        </script>
-
-        </script>
+<script src="js/networks.js"></script>
 </body>
 </html>

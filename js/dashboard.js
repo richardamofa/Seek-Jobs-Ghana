@@ -1,3 +1,12 @@
+    // Hamburger Menu Toggle
+    const hamMenu = document.querySelector('.ham-menu');
+    const navBar = document.querySelector('nav .nav');
+    if (hamMenu && navBar) {
+      hamMenu.addEventListener('click', () => {
+      navBar.classList.toggle('active');
+    });
+    }
+    
     // --- mock data ---
     const peopleMock = [
       {id:1,name:'Daniel Biggs',title:'Frontend Engineer',mutuals:8},
@@ -254,6 +263,9 @@
         editModal.style.display='none';
         document.body.style.overflow='auto';
       }
+
+      const hasPic = data.pic && data.pic !== '';
+      removePicBtn.style.display = hasPic ? 'inline-block' : 'none';
     });
 
     // --- remove profile button ---
@@ -268,6 +280,7 @@
       addActivity('Removed profile picture');
       showToast('Profile picture removed');
     });
+    
 
     // --- init ---
     loadState();

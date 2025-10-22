@@ -162,6 +162,11 @@ p.lead {
   font-size: 16px;
 }
 
+.profile-title {
+  font-weight: 600;
+  font-size: 12px;
+}
+
 .profile-bio {
   color: var(--muted);
   font-size: 13px;
@@ -479,7 +484,7 @@ p.lead {
   border-radius: 12px;
   padding: 18px;
   box-shadow: 0 20px 60px rgba(6, 60, 36, 0.14);
-  animation: slideUp 0.28s cubic-bezier(0.2, 0.9, 0.2, 1);
+  animation: slideUp 0.3s cubic-bezier(0.3, 0.9, 0.3, 1);
 }
 
 @keyframes slideUp {
@@ -549,6 +554,36 @@ textarea {
 
 /* Responsive */
 @media (max-width: 1000px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    z-index: 999;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav li a:hover {
+    background: #93cf90;
+    color: var(--text-light);
+    border-radius: 8px;
+    padding: 5px 10px;
+  }
+  .nav.active {
+    display: flex;
+  }
+
+  .ham-menu {
+    display: block;
+  }
   .grid {
     grid-template-columns: repeat(6, 1fr);
   }

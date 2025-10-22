@@ -92,6 +92,7 @@ nav {
     text-align: left;
     padding: 3rem;
     box-shadow: var(--shadow);
+    max-width: 2000px;
 }
 
 .hero-content {
