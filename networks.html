@@ -20,7 +20,7 @@
                     <li><a href="seekjobs.html"><i class="fa-solid fa-house"></i> Home</a></li>
                     <li><a href="jobs.html" target="_blank"><i class="fa-solid fa-briefcase"></i> Jobs</a></li>
                     <li><a href="resources.html"><i class="fa-solid fa-book"></i> Resources</a></li>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="seekjobs.html#about">About Us</a></li>
                 </ul>
                 <div class="ham-menu"><i class="fa fa-bars"></i></div>
             </nav>
@@ -30,8 +30,8 @@
         <div class="main">
             <div class="profile-section">
             <div class="profile-card">
-                <div class="edit"><a href="dashboard.html">Edit Profile</a></di>
-                <div class="profile-pic">
+                <div class="edit"><a href="dashboard.html">Edit Profile</a>
+            <div class="profile-pic">
                 <img id="networkProfilePic" src="" alt="Profile Picture">
             </div>
                 <h2 id="networkName">User Name</h2>
@@ -40,23 +40,50 @@
             </div>
             </div>
 
-            <div class="profile-details">
-                <h3>Contact Information</h3>
-                <hr />
-                <ul>
-                <li><i class="fa-solid fa-envelope"></i>  amofarichard@email.com</li>
-                <li><i class="fa-solid fa-phone"></i>  +233 123 456 789</li>
-                <li><i class="fa-brands fa-linkedin"></i> <a href="#"> linkedin.com/in/richardamofa11065</a></li>
-                </ul>
-                <h3>Skills</h3>
-                <hr />
-                <ul class="profile-skills">
-                <li>Full Stack Development</li>
-                <li>Web Development</li>
-                <li>Web Design</li>
-                <li>Networking</li>
-                </ul>
+            <div class="contact-card" id="contact-info">
+            <h2>Contact Information</h2>
+            <div class="contact-field">
+                <label>Email:</label>
+                <span id="contact-email">amofarichard101@gmail.com</span>
+                <input type="text" id="edit-email" value="amofarichard101@gmail.com" style="display:none;">
             </div>
+
+            <div class="contact-field">
+                <label>Phone:</label>
+                <span id="contact-number">0200854407</span>
+                <input type="text" id="edit-number" value="0200854407" style="display:none;">
+            </div>
+
+            <div class="contact-field">
+                <label>Links:</label>
+                <span id="contact-links">links.com/in/yourprofile</span>
+                <input type="text" id="edit-links" value="links.com/in/yourprofile" style="display:none;">
+            </div>
+
+            <div class="buttons">
+                <button id="edit-contact-btn">Edit</button>
+                <button id="save-contact-btn" style="display:none;">Save</button>
+            </div>
+            </div>
+
+            <div class="contact-card" id="roles-skills">
+            <h2>Roles and Skills</h2>
+            <ul id="skills-list">
+                <li>Frontend Development</li>
+                <li>UI/UX Design</li>
+                <li>JavaScript & React</li>
+            </ul>
+            <textarea id="edit-skills" style="display:none;">Frontend Development
+            UI/UX Design
+            JavaScript & React</textarea>
+
+            <div class="buttons">
+                <button id="edit-skills-btn">Edit</button>
+                <button id="save-skills-btn" style="display:none;">Save</button>
+            </div>
+            </div>
+
+
             <div class="stats-wrap">
                 <div class="stat">
                     <div class="label">Total Connections Made</div>
@@ -75,10 +102,9 @@
                 </div>
             </div>
             </div>
-
+            
             <div class="suggestion-section">
                 <h3>People You May Know</h3>
-                <hr />
                 <div class="suggestion-list">
                     <div class="suggestion-card">
                         <img src="css/img/data scientist.jpg" alt="Profile Picture" class="suggestion-img">
@@ -204,10 +230,11 @@
                     <div class="connect-info">
                         <h4>Fredrick Owusu</h4>
                         <p>QA Engineer</p>
-                        <span><i class="fa-solid fa-location-dot"></i> Tamale, Ghana</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Cape Coast, Ghana</span>
                     </div>
                     <div class="connect-btn"><i class="fa-solid fa-user-plus"></i> Connect</div>
                 </div>
+                
             </div>
         </div>
         <footer>

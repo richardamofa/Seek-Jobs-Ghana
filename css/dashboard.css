@@ -18,7 +18,7 @@
   --radius: 10px;
   --glass-border: rgba(255, 255, 255, 0.6);
   --radius: 14px;
-  --shadow: 0 12px 40px rgba(8, 30, 80, 0.08);
+  --shadow: 0 12px 40px rgba(8, 80, 28, 0.08);
   --toast-bg: rgba(15, 23, 42, 0.95);
 }
 
@@ -74,7 +74,7 @@ nav {
 .nav li a {
   color: #333;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 550;
   transition: color 0.2s;
 }
 

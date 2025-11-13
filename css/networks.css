@@ -71,7 +71,7 @@ nav {
 .nav li a {
     color: #333;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 550;
     transition: color 0.2s;
 }
 
@@ -174,6 +174,8 @@ nav {
     -webkit-backdrop-filter: blur(12px);
     border-radius: var(--radius);
     padding: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     color: var(--text-color);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -204,80 +206,149 @@ nav {
 }
 
 .profile-title {
-    font-weight: 600;
+    font-weight: 550;
+    font-size: 14px;
     color: var(--accent);
 }
 
-.profile-stats {
-    margin: 10px 0;
-    border-radius: var(--radius);
-    background-color: #93cf90;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-}
-
-.profile-stats .fa-solid {
-    border-radius: 50%;
-    padding: .5px;
+.profile-card h2 {
     font-size: 18px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2px;
 }
 
-.profile-stats strong {
-    color: #f3f8f3;
-}
-
-.profile-details {
-    background-color: var(--white);
+.contact-card {
+    background: var(--card);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: var(--radius);
-    margin: 1rem auto;
-    padding: 24px 20px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--text-color);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 316px;
 }
 
-.profile-details h3 {
-    color: var(--primary-green);
+.btn {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+  transition: color 0.2s , background 0.2s;
 }
 
-.profile-details ul {
-    list-style: none;
-    margin: auto;
-    padding: 8px;
-    line-height: 1.5;
+.btn.primary {
+  background: var(--accent);
+  color: white;
+  transition: background 0.2s;
 }
 
-.profile-details .fa-solid {
-    color: var(--secondary-green);
-    border-radius: 50%;
-    padding: .5px;
-    font-size: 18px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2px;
+.btn.primary:hover {
+  background: #2fc727;
 }
 
-.fa-linkedin {
-    background-color: #1da1f2;
-    color: var(--white); 
-    border-radius: 50%;
-    padding: 2.5px;
-    font-size: 18px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
+.btn.ghost {
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  background: white;
 }
 
-.fa-linkedin:hover {
-    background-color: var(--secondary-green);
+.btn.ghost:hover {
+  background: #f6f6f6;
+}
+
+.btn.cancel:hover {
+  color: #0e4613;
+}
+
+.btn.danger {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn.danger:hover {
+  background: #c0392b;
+}
+
+.btn.apply {
+  color: #494949;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn.apply:hover {
+  color: #fff;
+  background: var(--accent);
+}
+
+.btn.save {
+  color: #494949;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn.save:hover {
+  color: #fff;
+  background: #58c853;
+}
+
+.btn.connect {
+  color: var(--text-light);
+  background: var(--primary-green);
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+  transition: color 0.2s , background 0.2s;
+}
+
+.btn.connect:hover {
+  background: var(--secondary-green);
+  color: var(--text-light);
+}
+
+.btn.connect:active {
+  background: var(--primary-green);
+}
+
+.btn.connected {
+  margin-left: -10px;
+  background: var(--light-bg);
+  color: var(--text-dark);
+}
+
+.fa-solid.fa-right-from-bracket {
+  font-size: 20px;
+  transition: background 0.2s ease; 
+}
+
+.fa-solid.fa-right-from-bracket:hover {
+  color: #c0392b;
+}
+
+.fa-solid.fa-right-from-bracket:active {
+  color: #e74c3c;
+}
+
+.buttons button {
+  background: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.buttons button:hover {
+  background: var(--secondary-green);
+}
+
+.contact-info h2 {
+    color: var(--text-dark);
 }
 
 .stats-wrap {
@@ -315,6 +386,18 @@ nav {
 .stat .small {
     font-size: 12px;
     color: var(--muted);
+}
+
+.contact-field input {
+    padding: 6px;
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    margin-bottom: 4px;
+}
+
+.contact-card textarea {
+    margin: 0 20px;
+    padding: 60px;
 }
 
 /*.dashboard a {
@@ -386,7 +469,7 @@ nav {
 .suggestion-card img {
     width: 60px;
     height: 60px;
-    border: 2px solid var(--text-color);
+    border: 2px solid var(--card);
     margin: -50px auto 20px auto;
     border-radius: 50%;
     position: relative;
@@ -448,6 +531,7 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    background: var(--card);
 }
 
 .advert-section h3 {
@@ -512,7 +596,7 @@ nav {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    border: 2px solid var(--text-color);
+    border: 2px solid var(--bg2);
     object-fit: cover;
 }
 

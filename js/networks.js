@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!data) return;
     nameEl.textContent = data.name || 'User Name';
     titleEl.textContent = data.title || 'Job Seeker';
-    bioEl.textContent = data.bio || 'No bio provided.';
+    bioEl.textContent = data.bio || 'Short bio goes here.';
 
     if (data.pic) {
       picEl.src = data.pic;
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const stored = JSON.parse(localStorage.getItem('profileData') || '{}');
   updateProfileView(stored);
 
-  // Live update when profile changes on another tab/page
+  // Live update when profile changes on dashboard 
   window.addEventListener('storage', (event) => {
     if (event.key === 'profileData') {
       const newProfile = JSON.parse(event.newValue || '{}');
@@ -86,4 +86,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const connectionsMadeEl = document.getElementById('connectionsMade');
   connectionsMadeEl.style.color = "limegreen";
+});
+
+// -- Contact Information
+document.addEventListener('DOMContentLoaded', () => {
+  const editContactBtn = document.getElementById('edit-contact-btn');
+  const saveContactBtn = document.getElementById('save-contact-btn');
+  const editSkillsBtn = document.getElementById('edit-skills-btn');
+  const saveSkillsBtn = document.getElementById('save-skills-btn');
+
+  // --- Contact Section ---
+  editContactBtn.addEventListener('click', () => {
+    ['email', 'number', 'links'].forEach(id => {
+      document.getElementById(`contact-${id}`).style.display = 'none';
+      document.getElementById(`edit-${id}`).style.display = 'inline-block';
+    });
+    editContactBtn.style.display = 'none';
+    saveContactBtn.style.display = 'inline-block';
+  });
+
+  saveContactBtn.addEventListener('click', () => {
+    ['email', 'number', 'links'].forEach(id => {
+      const newValue = document.getElementById(`edit-${id}`).value.trim();
+      document.getElementById(`contact-${id}`).textContent = newValue;
+      document.getElementById(`contact-${id}`).style.display = 'inline';
+      document.getElementById(`edit-${id}`).style.display = 'none';
+    });
+    saveContactBtn.style.display = 'none';
+    editContactBtn.style.display = 'inline-block';
+    localStorage.setItem('contactInfo', JSON.stringify({
+      email: editEmail.value,
+      number: editNumber.value,
+      links: editLinks.value
+    }));
+  });
+
+  // --- Roles & Skills Section ---
+  editSkillsBtn.addEventListener('click', () => {
+    document.getElementById('skills-list').style.display = 'none';
+    document.getElementById('edit-skills').style.display = 'block';
+    editSkillsBtn.style.display = 'none';
+    saveSkillsBtn.style.display = 'inline-block';
+  });
+
+  saveSkillsBtn.addEventListener('click', () => {
+    const newSkills = document.getElementById('edit-skills').value.trim().split('\n');
+    const skillsList = document.getElementById('skills-list');
+    skillsList.innerHTML = newSkills.map(skill => `<li>${skill}</li>`).join('');
+    skillsList.style.display = 'block';
+    document.getElementById('edit-skills').style.display = 'none';
+    saveSkillsBtn.style.display = 'none';
+    editSkillsBtn.style.display = 'inline-block';
+    localStorage.setItem('skills', JSON.stringify(newSkills));
+  });
+
+  // --- Load saved data if exists ---
+  const savedContact = JSON.parse(localStorage.getItem('contactInfo'));
+  if (savedContact) {
+    contactEmail.textContent = savedContact.email;
+    contactNumber.textContent = savedContact.number;
+    contactLinks.textContent = savedContact.links;
+  }
+
+  const savedSkills = JSON.parse(localStorage.getItem('skills'));
+  if (savedSkills) {
+    skillsList.innerHTML = savedSkills.map(skill => `<li>${skill}</li>`).join('');
+  }
 });

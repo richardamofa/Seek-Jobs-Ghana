@@ -158,7 +158,14 @@
       }
     }
 
+
+    function viewProfileNetwork() {
+      window.location.href = ".networks.html";
+    }
+
+
     // --- event handlers ---
+
     document.addEventListener('click',(e)=>{
       const btn = e.target.closest('button');
       if(!btn) return;
