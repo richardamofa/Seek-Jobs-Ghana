@@ -8,10 +8,6 @@
                 });
             }
 
-            // Select Function 
-            function changeBg(select) {
-                select.style.backgroundColor = select.value;
-            }
             // Smooth Scrolling for Navigation
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
@@ -63,22 +59,9 @@
             }
 
             // Handle Connect button
-            document.querySelectorAll('.btn01').forEach(button => {
+            document.querySelectorAll('.connect-btn').forEach(button => {
                 button.addEventListener('click', () => {
                     button.textContent = "Connected";
                     button.classList.add('connected');
                 });
             });
-
-            // Contact Form Submission (alert and reset)
-            const formContact = document.querySelector('.contact');
-            if (formContact) {
-              formContact.addEventListener('submit', function(e) {
-              // Only show alert if not using mailto
-              if (formContact.action.indexOf('mailto:') === -1) {
-                e.preventDefault();
-                alert('Thank you for your message! We will contact you shortly.');
-                formContact.reset();
-              }
-              });
-            }
