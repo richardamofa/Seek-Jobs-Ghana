@@ -178,7 +178,6 @@ p.lead {
   gap: 8px;
 }
 
-/* Buttons */
 .btn {
   padding: 8px 12px;
   border-radius: 20px;
@@ -280,7 +279,7 @@ p.lead {
   color: #e74c3c;
 }
 
-/* Stats Section */
+
 .stats-wrap {
   grid-column: span 9;
   display: flex;
@@ -370,7 +369,7 @@ p.lead {
   background: #94f18f;
 }
 
-/* People Grid */
+
 .people-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
@@ -418,7 +417,7 @@ p.lead {
   font-size: 13px;
 }
 
-/* Jobs List */
+
 .jobs-list {
   display: flex;
   flex-direction: column;
@@ -449,7 +448,7 @@ p.lead {
   color: var(--muted);
 }
 
-/* Right Column */
+
 .right-col {
   grid-column: span 12;
   display: flex;
@@ -461,7 +460,7 @@ p.lead {
   font-size: 14px;
 }
 
-/* Modal */
+
 .modal-bg {
   position: fixed;
   inset: 0;
@@ -526,7 +525,7 @@ textarea {
   margin-top: 8px;
 }
 
-/* Toast */
+
 .toast {
   position: fixed;
   right: 20px;
@@ -547,12 +546,43 @@ textarea {
   transform: translateY(0);
 }
 
-/* Helpers */
+
+
 .muted {
   color: var(--muted);
 }
 
-/* Responsive */
+footer {
+    background: #f1f6f2;
+    border-top: 1px solid #d4e7d6;
+}
+
+
+.footer {
+    border-top: 1px solid #e6e9ec;
+    text-align: center;
+    padding: 1.5rem 0 1rem 0;
+    margin-top: 0;
+}
+
+.social-icons-footer {
+    margin-top: 0.5rem;
+}
+
+.social-icons-footer .icon {
+    color: var(--primary-green);
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.social-icons-footer .icon:hover {
+    color: var(--text-color);
+}
+
+
+
 @media (max-width: 1000px) {
   .nav {
     display: none;

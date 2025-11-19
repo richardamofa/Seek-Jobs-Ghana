@@ -7,7 +7,7 @@
     });
     }
     
-    // --- mock data ---
+      // --- mock data (hand coded users for now! without server-provided users) ---
     const peopleMock = [
       {id:1,name:'Daniel Biggs',title:'Frontend Engineer',mutuals:8},
       {id:2,name:'Andrea Opare',title:'Product Manager',mutuals:3},
@@ -55,6 +55,9 @@
     const toast = document.getElementById('toast');
     const removePicBtn = document.getElementById('removePic');
 
+    const PROFILE_KEY = 'profileData';
+
+
     // --- helper functions ---
     function showToast(msg='Saved',time=2200){
       toast.textContent = msg;
@@ -86,6 +89,9 @@
       if(stored.pic) profilePic.innerHTML = `<img src="${stored.pic}" alt="profile"/>`;
       else profilePic.textContent = (stored.name||profileName.textContent||'U').split(' ').map(n=>n[0]).slice(0,2).join('');
     }
+
+    
+    
 
     // --- stats rendering ---
     function renderStats(){
@@ -160,7 +166,7 @@
 
 
     function viewProfileNetwork() {
-      window.location.href = ".networks.html";
+      window.location.href = "welcome.html";
     }
 
 

@@ -6,7 +6,7 @@ document.querySelectorAll('.connect-btn').forEach(button => {
   });
 });
 
-// Handle Accept/Ignore buttons
+/*Handle Accept/Ignore buttons
 document.querySelectorAll('.accept-btn').forEach(button => {
   button.addEventListener('click', () => {
     const inviteItem = button.closest('li');
@@ -19,7 +19,7 @@ document.querySelectorAll('.ignore-btn').forEach(button => {
     const inviteItem = button.closest('li');
     inviteItem.remove();
   });
-});
+});*/
 
 document.addEventListener('DOMContentLoaded', () => {
   const nameEl = document.getElementById('networkName');
@@ -54,6 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function saveState() {
+  }
+
+function loadState() {
+  }
+
     // --- stats rendering ---
     function renderStats(){
       connectionsMadeEl.textContent = state.connectionsMade.toLocaleString();
@@ -77,6 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    function saveState() {
+
+    }
+    function loadState() {
+
+    }
+
 document.addEventListener('DOMContentLoaded', () => {
   const jobsPendingEl = document.getElementById('jobsPending');
   jobsPendingEl.style.color = "red";
@@ -88,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
   connectionsMadeEl.style.color = "limegreen";
 });
 
-// -- Contact Information
+// -- Contact Section Information
 document.addEventListener('DOMContentLoaded', () => {
   const editContactBtn = document.getElementById('edit-contact-btn');
   const saveContactBtn = document.getElementById('save-contact-btn');

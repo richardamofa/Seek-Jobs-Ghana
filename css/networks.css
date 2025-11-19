@@ -393,11 +393,30 @@ nav {
     border: 1px solid var(--accent);
     border-radius: 5px;
     margin-bottom: 4px;
+    outline: none;
 }
 
 .contact-card textarea {
-    margin: 0 20px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    margin: 0 30px;
     padding: 60px;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    column-span: 30px;
+    height: 30px;
+    outline: none;
+    resize: vertical;
+    overflow-y: hidden;
+}
+
+.contact-field input,
+.contact-card textarea {
+    transition: all .4s ease;
+}
+
+.contact-field input:hover,
+.contact-card textarea:hover {
+    box-shadow: var(--shadow);
 }
 
 /*.dashboard a {
@@ -625,7 +644,13 @@ nav {
 .fadeIn {
   animation: fadeIn 0.4s ease-out;
 }
-    
+
+footer {
+    background: #f1f6f2;
+    border-top: 1px solid #d4e7d6;
+}
+
+
 .footer {
     border-top: 1px solid #e6e9ec;
     text-align: center;
@@ -725,6 +750,9 @@ nav {
     .nav.active {
         display: flex;
     }
+    .edit a {
+        display: none;
+    }
     .main {
         flex-direction: column;
         align-items: stretch;
@@ -786,28 +814,42 @@ nav {
     }
     .profile-section,
     .suggestion-section,
-    .advert-section {
+    .advert-section,
+    .connect-section {
         width: 100%;
         margin: 1rem 0;
         padding: 0;
     }
+    
+    .suggestion-section,
+    .advert-section,
+    .connect-section {
+        padding: 10px;
+    }
+
     .edit a {
         left: 80%;
     }
+
+    .profile-card,
+    .contact-card {
+        max-width: 200px;
+        width: 100%;
+    }
+
     .suggestion-list {
-        padding: 8px;
-        grid-template-columns: repeat(2, 1fr);
+        padding: 10px 20px;
+        grid-template-columns: repeat(1, 1fr);
         align-items: center;
     }
     .connect-grid {
         grid-template-columns: 1fr;
         padding: 2.5rem;
         display: grid;
-        flex: wrap;
         gap: 20px;
     }
     .connect-card  {
-        width: 60%;
+        width: 80%;
         max-width: 500px;
     }
 }
