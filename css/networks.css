@@ -732,14 +732,10 @@ footer {
         top: 70px;
         right: 20px;
         background: white;
-        width: 100%;
         padding: 1rem;
         border-radius: 8px;
         box-shadow: 0 8px 24px rgba(0,0,0,0.15);
         z-index: 999;
-    }
-    .nav.active {
-        display: flex;
     }
     .nav li a:hover {
         background: #93cf90;
@@ -749,6 +745,10 @@ footer {
     }
     .nav.active {
         display: flex;
+    }
+
+    .ham-menu {
+        display: block;
     }
     .edit a {
         display: none;
@@ -816,14 +816,16 @@ footer {
     .suggestion-section,
     .advert-section,
     .connect-section {
+        max-width: fit-content;
         width: 100%;
-        margin: 1rem 0;
+        margin: 1rem 1rem;
         padding: 0;
     }
     
     .suggestion-section,
     .advert-section,
     .connect-section {
+        margin: 1rem 1rem;
         padding: 10px;
     }
 
@@ -833,23 +835,37 @@ footer {
 
     .profile-card,
     .contact-card {
-        max-width: 200px;
+        max-width: 300px;
         width: 100%;
     }
 
+    .advert-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .connect-card {
+
+    }
+
+    h3 {
+        text-align: center;
+    }
+
     .suggestion-list {
-        padding: 10px 20px;
-        grid-template-columns: repeat(1, 1fr);
+        padding: 10px 50px;
+        grid-template-columns: repeat(2, fr);
         align-items: center;
     }
     .connect-grid {
-        grid-template-columns: 1fr;
-        padding: 2.5rem;
+        margin: 1rem 1rem;
+        grid-template-columns: repeat(2, 1fr);
         display: grid;
         gap: 20px;
-    }
-    .connect-card  {
-        width: 80%;
-        max-width: 500px;
+    } 
+    footer {
+        width: 100%;
     }
 }

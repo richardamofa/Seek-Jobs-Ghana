@@ -1,4 +1,14 @@
-// Handle Connect button
+// Hamburger Menu Toggle
+const hamMenu = document.querySelector('.ham-menu');
+const navBar = document.querySelector('nav .nav');
+if (hamMenu && navBar) {
+    hamMenu.addEventListener('click', () => {
+     navBar.classList.toggle('active');
+  });
+}
+
+
+// handle Connect button
 document.querySelectorAll('.connect-btn').forEach(button => {
   button.addEventListener('click', () => {
     button.textContent = "Connected";
@@ -60,14 +70,14 @@ function saveState() {
 function loadState() {
   }
 
-    // --- stats rendering ---
+    // stats rendering
     function renderStats(){
       connectionsMadeEl.textContent = state.connectionsMade.toLocaleString();
       jobsAppliedEl.textContent = state.jobsApplied.toLocaleString();
       jobsPendingEl.textContent = state.jobsPending.toLocaleString();
     }
 
-    // --- save state ---
+    // save state
     function saveState(){
       const minimal = { jobs: state.jobs, people: state.people, connectionsMade: state.connectionsMade, jobsApplied: state.jobsApplied, jobsPending: state.jobsPending };
       localStorage.setItem('dashboardState', JSON.stringify(minimal));
@@ -101,14 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
   connectionsMadeEl.style.color = "limegreen";
 });
 
-// -- Contact Section Information
+// contact section information
 document.addEventListener('DOMContentLoaded', () => {
   const editContactBtn = document.getElementById('edit-contact-btn');
   const saveContactBtn = document.getElementById('save-contact-btn');
   const editSkillsBtn = document.getElementById('edit-skills-btn');
   const saveSkillsBtn = document.getElementById('save-skills-btn');
 
-  // --- Contact Section ---
+  //  contact section
   editContactBtn.addEventListener('click', () => {
     ['email', 'number', 'links'].forEach(id => {
       document.getElementById(`contact-${id}`).style.display = 'none';
@@ -134,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   });
 
-  // --- Roles & Skills Section ---
+  // roles & skills section
   editSkillsBtn.addEventListener('click', () => {
     document.getElementById('skills-list').style.display = 'none';
     document.getElementById('edit-skills').style.display = 'block';
@@ -153,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('skills', JSON.stringify(newSkills));
   });
 
-  // --- Load saved data if exists ---
+  // load saved data if exists 
   const savedContact = JSON.parse(localStorage.getItem('contactInfo'));
   if (savedContact) {
     contactEmail.textContent = savedContact.email;
