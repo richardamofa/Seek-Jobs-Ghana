@@ -1,4 +1,4 @@
-# 🌍 Seek Jobs Ghana
+# Seek Jobs Ghana
 
 **Seek Jobs Ghana** is a modern web platform built to connect job seekers and employers across Ghana.  
 It provides a complete ecosystem for professional growth, from job listings and networking to career development and real-world resources.
