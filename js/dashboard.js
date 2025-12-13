@@ -7,7 +7,8 @@
     });
     }
     
-      // --- mock data (hand coded users for now! without server-provided users) ---
+      // mock data (hand coded users for now! without server-provided users) 
+      
     const peopleMock = [
       {id:1,name:'Daniel Biggs',title:'Frontend Engineer',mutuals:8},
       {id:2,name:'Andrea Opare',title:'Product Manager',mutuals:3},
@@ -24,7 +25,8 @@
       {id:104,role:'Data Analyst',company:'InsightLab',location:'Takoradi',status:'pending'}
     ];
 
-    // --- app state ---
+    //app state 
+    
     const state = {
       people: [...peopleMock],
       jobs: [...jobsMock],
@@ -34,7 +36,8 @@
       activity: []
     };
 
-    // --- dom refs ---
+    //dom refs 
+    
     const peopleList = document.getElementById('peopleList');
     const jobsList = document.getElementById('jobsList');
     const connectionsMadeEl = document.getElementById('connectionsMade');
@@ -58,7 +61,8 @@
     const PROFILE_KEY = 'profileData';
 
 
-    // --- helper functions ---
+    //helper functions 
+    
     function showToast(msg='Saved',time=2200){
       toast.textContent = msg;
       toast.classList.add('show');
@@ -81,7 +85,8 @@
       })
     }
 
-    // --- profile persistence ---
+    //profile persistence 
+    
     function loadProfile(){
       const stored = JSON.parse(localStorage.getItem('profileData')||'{}');
       if(stored.name) profileName.textContent = stored.name;
@@ -93,14 +98,16 @@
     
     
 
-    // --- stats rendering ---
+    //stats rendering 
+    
     function renderStats(){
       connectionsMadeEl.textContent = state.connectionsMade.toLocaleString();
       jobsAppliedEl.textContent = state.jobsApplied.toLocaleString();
       jobsPendingEl.textContent = state.jobsPending.toLocaleString();
     }
 
-    // --- people & jobs rendering ---
+    //people & jobs rendering 
+    
     function renderPeople(){
       peopleList.innerHTML = '';
       state.people.forEach(p=>{
@@ -148,7 +155,20 @@
       })
     }
 
-    // --- save state ---
+      // Text color for renders
+      document.addEventListener('DOMContentLoaded', () => {
+      const jobsPendingEl = document.getElementById('jobsPending');
+      jobsPendingEl.style.color = "red";
+
+      const jobsAppliedEl = document.getElementById('jobsApplied');
+      jobsAppliedEl.style.color = "var(--text-color)";
+
+      const connectionsMadeEl = document.getElementById('connectionsMade');
+      connectionsMadeEl.style.color = "limegreen";
+    });
+
+    //save state 
+    
     function saveState(){
       const minimal = { jobs: state.jobs, people: state.people, connectionsMade: state.connectionsMade, jobsApplied: state.jobsApplied, jobsPending: state.jobsPending };
       localStorage.setItem('dashboardState', JSON.stringify(minimal));
@@ -164,14 +184,19 @@
       }
     }
 
+    function saveState() {
+
+    }
+    function loadState() {
+
+    }
 
     function viewProfileNetwork() {
       window.location.href = "welcome.html";
     }
 
 
-    // --- event handlers ---
-
+    //event handlers 
     document.addEventListener('click',(e)=>{
       const btn = e.target.closest('button');
       if(!btn) return;
@@ -214,7 +239,8 @@
     document.getElementById('filterOpen').addEventListener('click',()=>{ currentFilter='open'; renderJobs(); });
     document.getElementById('filterApplied').addEventListener('click',()=>{ currentFilter='applied'; renderJobs(); });
 
-    // --- modal handlers ---
+    //modal handlers 
+    
     editProfileBtn.addEventListener('click',()=>{
       editModal.style.display='flex';
       editName.value = profileName.textContent;
@@ -232,7 +258,8 @@
       document.body.style.overflow='auto';
     });
 
-    // --- save edit profile ---
+    //save edit profile 
+    
     saveEdit.addEventListener('click',()=>{
       const name = editName.value.trim() || 'User Name';
       const bio = editBio.value.trim() || 'No bio provided.';
@@ -281,7 +308,8 @@
       removePicBtn.style.display = hasPic ? 'inline-block' : 'none';
     });
 
-    // --- remove profile button ---
+    //remove profile button 
+    
     removePicBtn.addEventListener('click',()=>{
       profilePic.innerHTML = '';
       const initials = profileName.textContent.split(' ').map(n => n[0]).slice(0,2).join('');
@@ -295,7 +323,8 @@
     });
     
 
-    // --- init ---
+    //init 
+    
     loadState();
     loadProfile();
     renderStats();

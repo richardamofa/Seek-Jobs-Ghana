@@ -1,5 +1,5 @@
 (() => {
-  // --- mock data ---
+  // mock data
   const peopleMock = [
     { id: 1, name: 'Daniel Biggs', title: 'Frontend Engineer', mutuals: 8 },
     { id: 2, name: 'Andrea Opare', title: 'Cloud Manager', mutuals: 3 },
@@ -20,7 +20,7 @@
     { id: 108, role: 'Vibe Coder', company: 'YourHouse', location: 'Takoradi', status: 'open' }
   ];
 
-  // --- element refs ---
+  // element refs
   const peopleList = document.getElementById('peopleList');
   const jobsList = document.getElementById('jobsList');
   const connectionsMadeEl = document.getElementById('connectionsMade');
@@ -36,16 +36,16 @@
   const addConnectionBtn = document.getElementById('addConnection');
   const applyRandomBtn = document.getElementById('applyRandomJob');
 
-  // --- profile elements ---
+  // profile elements
   const profileName = document.getElementById('profileNameDisplay');
   const profileTitle = document.getElementById('profileTitleDisplay'); // optional
   const profileBio = document.getElementById('profileBioDisplay');
   const profilePic = document.getElementById('profilePicDisplay');
 
   const PROFILE_KEY = 'profileData';
-  const STORAGE_KEY = 'seek_welcome_state';
+  const STORAGE_KEY = 'dashboardState';
 
-  // --- toast setup ---
+  // toast setup
   let toast = document.getElementById('toast');
   if (!toast) {
     toast = document.createElement('div');
@@ -89,7 +89,7 @@
   connectionsMadeEl.style.color = "limegreen";
 });
 
-  // --- app state ---
+  // app state
   let state = {
     people: [...peopleMock],
     jobs: [...jobsMock],
@@ -116,7 +116,7 @@
     } catch (e) { console.warn('Could not load state', e); }
   }
 
-  // --- profile sync ---
+  // profile sync
   function loadProfile() {
     const stored = JSON.parse(localStorage.getItem(PROFILE_KEY) || '{}');
     if (!stored) return;
@@ -139,7 +139,7 @@
     if (event.key === PROFILE_KEY) loadProfile();
   });
 
-  // --- helper functions ---
+  // helper functions
   function addActivity(text) {
     const time = new Date().toLocaleTimeString();
     state.activity.unshift({ text, time });
@@ -154,7 +154,7 @@
     }[s]));
   }
 
-  // --- rendering ---
+  // rendering
   function renderStats() {
     if (connectionsMadeEl) connectionsMadeEl.textContent = state.connectionsMade.toLocaleString();
     if (jobsAppliedEl) jobsAppliedEl.textContent = state.jobs.filter(j => j.status === 'applied').length.toLocaleString();
@@ -217,7 +217,7 @@
     filtered.forEach(j => jobsList.appendChild(createJobElement(j)));
   }
 
-  // --- actions ---
+  // actions
   function connectToPerson(id) {
     const p = state.people.find(x => x.id === id);
     if (!p) return;
@@ -258,7 +258,7 @@
     showToast('Refreshed people');
   }
 
-  // --- event wiring ---
+  // event wiring
   function wireEvents() {
     if (shuffleBtn) shuffleBtn.addEventListener('click', shufflePeople);
     if (refreshBtn) refreshBtn.addEventListener('click', refreshPeople);
@@ -292,7 +292,7 @@
     });
   }
 
-  // --- init ---
+  // init
   function init() {
     loadState();
     loadProfile();
