@@ -59,7 +59,7 @@ seek-jobs-ghana/
    php -S localhost:8013
 
 3. Open your browser and visit
-http://localhost:8013 -- almost done
+http://localhost: -- almost done
 
 ✨ Author
 
