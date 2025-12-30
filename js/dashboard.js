@@ -20,9 +20,9 @@
 
     const jobsMock = [
       {id:101,role:'Frontend Engineer',company:'BlueWave',location:'Accra',status:'open'},
-      {id:102,role:'Backend Engineer',company:'DataNest',location:'Kumasi',status:'applied'},
+      {id:102,role:'Backend Engineer',company:'DataNest',location:'Kumasi',status:'open'},
       {id:103,role:'Product Designer',company:'FlowStudio',location:'Accra',status:'open'},
-      {id:104,role:'Data Analyst',company:'InsightLab',location:'Takoradi',status:'pending'}
+      {id:104,role:'Data Analyst',company:'InsightLab',location:'Takoradi',status:'open'}
     ];
 
     //app state 
