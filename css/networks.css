@@ -809,6 +809,10 @@ footer {
     .nav.active {
         display: flex;
     }
+    .edit.show a {
+        display: flex;
+        left: 70%;
+    }
     .main {
         flex-direction: column;
     }
