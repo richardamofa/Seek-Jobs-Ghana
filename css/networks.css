@@ -86,47 +86,6 @@ nav {
     cursor: pointer;
 }
 
-/*.hero {
-    background-image: url(img/net.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: #fff;
-    padding: 4rem 0 3rem 0;
-    text-align: center;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: inherit;
-    background-repeat: inherit;
-    background-size: inherit;
-    background-position: inherit;
-    z-index: 0;
-}
-
-.hero-content {
-    max-width: 600px;
-    margin: auto;
-    position: relative;
-    z-index: 1;
-}
-
-.hero-content h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}*/
-
 .main {
     margin: 0 auto;
     width: 100%;
