@@ -1,208 +1,188 @@
 :root {
     --primary-green: #77e64c;
     --secondary-green: #58c853;
+    --accent: #6edc7b;
     --dark-bg: #1c1a1a;
-    --light-bg: #e3e3e3;
+    --light-bg: #f5f7f6;
     --white: #ffffff;
     --text-color: #235347;
     --text-dark: #333;
     --text-light: #ffffff;
-    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --radius: 10px;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    --radius: 16px;
 }
 
-*{
+/* RESET */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background: #c3f1c3;
-    font-family: 'Montserrat', 'Poppins', sans-serif;
-    background: var(--accent);
+    font-family: 'Montserrat','Poppins', sans-serif;
+    background: linear-gradient(135deg, #c9f7c9, #e9fff0);
     color: var(--text-color);
-    min-height: 80vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
 .container {
-    width: 90%;
+    width: 92%;
+    max-width: 1200px;
     margin: auto;
 }
+
 main {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
     align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
 }
-.sign {
-    margin: 0;
-    padding: 0;
-}
-.sign p {
-    color: var(--text-color);
-    margin: 0;
-}
-.sign h2 {
-    margin: 0.5rem;
-}
+
+/* LEFT SIDE */
 .sign img {
-    width: 300px ; 
-    height: 300px; 
-    border-radius: 1rem; 
-    display: block;
+    width: 340px;
+    height: auto;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow);
 }
+
+.sign h2 {
+    margin: 1rem 0;
+    font-size: 2rem;
+}
+
+.sign p {
+    opacity: 0.8;
+}
+
+/* FORM CARD */
 .form-side {
-    background: #e3e3e3;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    margin: 30px 60px;
-    padding: 0 40px;
-    width: 80%;
-    height: 100%;
+    backdrop-filter: blur(14px);
+    background: rgba(255,255,255,0.7);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 3rem;
+    width: 420px;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
-.social-icons {
-    margin: 20px 0;
+
+.form-side:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
-.social-icons a {
-    text-decoration: none;
-    color: var(--dark-bg);
-    border: 1px solid rgba(32, 97, 27, 0.817);
-    border-radius: 20%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 3px;
-    width: 40px;
-    height: 40px;
-    transition: color 0.2s, background 0.2s;
-}
-.social-icons a:hover {
-    color: var(--text-light);
-    background: var(--text-color);
+
+.form-side h2 {
+    margin-bottom: 1rem;
 }
 
 .form-side input {
-    font-family: Montserrat;
-    background: #eee;
-    border: none;
-    margin: 8px 0;
-    padding: 10px 15px;
-    font-size: 13px;
-    border-radius: 8px;
+    background: #f1f3f2;
+    border: 1px solid transparent;
+    margin: 12px 0;
+    padding: 14px 16px;
+    font-size: 14px;
+    border-radius: 12px;
     width: 100%;
     outline: none;
-}
-.form-side input:focus-visible {
-    outline: 1px solid var(--text-color);
-    outline-offset: 1px;
+    transition: border .2s, background .2s;
 }
 
+.form-side input:focus {
+    border: 1px solid var(--accent);
+    background: #ffffff;
+}
+
+/* BUTTON */
 .submit {
+    margin-top: 1rem;
     color: var(--text-light);
-    background: var(--text-color);
-    border: 1px solid var(--dark-bg);
-    padding: 10px 15px;
-    font-family: 'Poppins';
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    border: none;
+    padding: 14px;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: 1rem;
+    border-radius: 14px;
     width: 100%;
     cursor: pointer;
-    transition: color 0.2s ease-in;
+    transition: transform .15s ease, box-shadow .2s ease;
 }
 
 .submit:hover {
-    background: #3a6b60;
-    transition: 0.3s ease;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
 }
 
-/* Footer */
-footer {
-    background: var(--text-color);
-    color: #888;
-    text-align: center;
-    padding: 2.5rem 0 1rem 0;
-    border-top: 1px solid #e3e3e3;
-    margin-top: 0;
+/* SOCIAL LOGIN */
+.social-icons {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
 }
-.social-icons-footer a {
-    color: var(--text-light);
-    font-size: 1.5rem;
-    margin: 0 0.5rem;
-    text-align: center;
-    transition: color 0.2s;
-}
-.social-icons-footer a:hover {
-    color: var(--secondary-green);
-}
-.footer p {
-    margin: 0.5rem 0 0 0;
-    font-size: 0.98rem;
-}
-.footer-links {
+
+.social-icons a {
+    text-decoration: none;
+    color: var(--dark-bg);
+    border: 1px solid #cde7cf;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
-    padding: 0.5rem 0;
-    font-size: 1rem;
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    transition: all .25s ease;
 }
+
+.social-icons a:hover {
+    background: var(--accent);
+    color: white;
+    transform: scale(1.08);
+}
+
+/* FOOTER */
+footer {
+    background: #1f3d36;
+    color: #c9d7d3;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: .5rem;
+}
+
 .footer-links a {
     color: var(--primary-green);
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
 }
+
 .footer-links a:hover {
-    color: var(--secondary-green);
     text-decoration: underline;
 }
 
-@media (max-width: 780px) {
-    .form-side, .sign {
-        width: 100%;
-        margin: 0;
-        padding: 20px;
+/* MOBILE */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding: 1.5rem 0;
     }
-}
-@media (max-width: 580px) {
+
     .form-side {
         width: 100%;
-        height: 100%;
-        margin: 0;
         padding: 2rem;
     }
-    .form-side input {
-        width: 100%;
-        height: auto;
-    }
-    .sign {
-        max-width: max-content;
-    }
+
     .sign img {
-        width: 400px;
-    }
-    .submit {
-        width: 100%;
-        margin: 0;
-        padding: 0.5rem;
-        font-size: 0.65rem;
-    }
-    footer {
-        width: 100%;
-        max-width: 500px;
-        padding: 0.5rem;
-    }
-    .footer-links {
-        gap: 1rem;
-        padding: 0;
-        font-size: 0.65rem;
-    }
-    .social-icons-footer{
-    font-size: 0.65rem;
-    margin: 0.5rem;
+        width: 260px;
     }
 }

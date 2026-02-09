@@ -251,7 +251,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             text-align: center;
             z-index: 9999;
             opacity: 0;
-            transition: all 0.6s ease;
+            transition: all 0.9s ease;
         }
         .error-message.show {
             top: 20px;

@@ -55,6 +55,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       margin: 0;
       background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
       color: #0f172a;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -62,7 +63,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       border-bottom: 1px solid #d4e7d6;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 99999;
     }
 
     .container {
@@ -111,41 +112,49 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       cursor: pointer;
     }
 
-    .app {
-      max-width: 1200px;
-      margin: 10px auto;
-      padding: 8px;
-    }
 
     h1 {
       font-size: 18px;
       margin: 0;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 18px;
+    .hero {
+  background: var(--card);
+  backdrop-filter: blur(6px);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+       margin: 10px 10px 0 10px;
+       display: flex;
+       flex-direction: row;
+       gap: 10px;
     }
 
+    .dashboard-grid {
+       padding: 15px;
+       border: 1px solid #111;
+       display: flex;
+       flex-direction: row;
+       background: var(--white);
+       backdrop-filter: blur(8px);
+       /*box-shadow: var(--shadow);*/
+       border-radius: var(--radius);
+       border: 1px solid var(--glass-border);
+       transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    /*.dashboard-grid:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 60px rgba(8, 80, 32, 0.12);
+    }*/
+
     .profile-card {
-      grid-column: span 3;
-      background: var(--card);
-      backdrop-filter: blur(8px);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--glass-border);
+      max-width: 200px;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 12px;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .profile-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(8, 80, 32, 0.12);
     }
 
     .profile-pic {
@@ -153,12 +162,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       height: 88px;
       border-radius: 50%;
       overflow: hidden;
-      background: linear-gradient(135deg, #f3f8f3, #f1fff1);
+       background: linear-gradient(135deg, #f3f8f3, #f1fff1);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 28px;
+      font-size: 14px;
       color: var(--text-dark);
       transition: transform 0.18s ease;
     }
@@ -186,6 +195,66 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       gap: 8px;
     }
 
+/* Stats Section */
+.stats-wrap {
+  grid-column: span 9;
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.stat {
+  width: 300px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+.stat .label {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.stat .value {
+  color: #0e4613;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.stat .small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.welcome {
+    padding: 20px;
+    background: var(--white);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius);
+    border: 1px solid var(--glass-border);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    margin: 5px;
+    max-width: 650px;
+}
+
+    /*.welcome:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 60px rgba(8, 80, 32, 0.12);
+    }*/
+
+    .motto {
+        font-weight: 600;
+        font-size: 13px;
+        font-style: italic;
+    }
+
+.welcome h1 {
+    font-size: 1.5rem;
+}
+
     /* Buttons */
     .btn {
       padding: 8px 12px;
@@ -208,7 +277,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     }
 
     .btn.ghost {
-      border: 1px solid rgba(15, 23, 42, 0.06);
+      border: 1px solid #eef2f7;
       background: white;
     }
 
@@ -287,51 +356,256 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       color: var(--text-light);
       background: #fa4e4eff;
     }
-    /* Stats Section */
-.stats-wrap {
-  grid-column: span 9;
-  display: flex;
-  gap: 12px;
-  align-items: stretch;
-}
 
-.stat {
-  flex: 1;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.968), var(--card));
-  padding: 14px;
+/* People and Jobs Cards */
+.people-card {
+  grid-column: span 7;
+  background: var(--card);
+  backdrop-filter: blur(6px);
   border-radius: 12px;
-  border: 1px solid var(--glass-border);
+  padding: 16px;
   box-shadow: var(--shadow);
+  border: 1px solid var(--glass-border);
+}
+
+.jobs-card {
+  grid-column: span 5;
+  background: var(--card);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--glass-border);
+}
+
+/* Section Titles */
+.section-title {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  transition: transform 0.14s ease;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-.stat:hover {
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(25, 78, 46, 0.04);
+  background: transparent;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pill:hover {
+  background: #94f18f;
+}
+
+.cards-grid {
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 0;
+}
+
+/* People Grid */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.person {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #eefbf0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.person:hover {
   transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(9, 30, 68, 0.06);
 }
 
-.stat .label {
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.person .meta {
+  flex: 1;
+}
+
+.person .name {
+  font-weight: 700;
+}
+
+.person .muted {
   color: var(--muted);
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 13px;
 }
 
-.stat .value {
-  color: #0e4613;
-  font-size: 20px;
-  font-weight: 900;
+/* Jobs List */
+.jobs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  z-index: 0;
 }
 
-.stat .small {
+.job {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #eef2f7;
+  background: white;
+  transition: transform 0.12s ease;
+}
+
+.job:hover {
+  transform: translateY(-4px);
+}
+
+.job .company {
+  font-weight: 700;
+}
+
+.job .tags {
   font-size: 12px;
   color: var(--muted);
+}
+
+/* Right Column */
+.right-col {
+    margin: 10px 0;
+  grid-column: span 12;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.muted {
+  font-size: 14px;
+}
+
+
+
+/* Helpers */
+.muted {
+  color: var(--muted);
+}
+
+footer {
+    background: #f1f6f2;
+    border-top: 1px solid #d4e7d6;
+}
+
+.footer {
+    text-align: center;
+    padding: 1.5rem 0 1rem 0;
+    margin-top: 0;
+}
+
+.social-icons-footer {
+    margin-top: 0.5rem;
+}
+
+.social-icons-footer .icon {
+    color: var(--primary-green);
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.social-icons-footer .icon:hover {
+    color: var(--text-color);
+}
+
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    z-index: 999;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav li a:hover {
+    background: #93cf90;
+    color: var(--text-light);
+    border-radius: 8px;
+    padding: 5px 10px;
+  }
+  .nav.active {
+    display: flex;
+  }
+
+  .ham-menu {
+    display: block;
+  }
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .profile-card {
+    grid-column: span 6;
+  }
+
+  .stats-wrap {
+    grid-column: span 6;
+    flex-direction: column;
+  }
+
+  .people-card {
+    grid-column: span 6;
+  }
+
+  .jobs-card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 600px) {
+  .people-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
 }
   </style>
 </head>
 
 <body>
+  <!-- Header -->
   <header>
     <div class="container">
       <nav>
@@ -339,50 +613,114 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           <a href="#"><span style="color: #77e64c;">Seek</span>Jobs</a>
         </div>
         <ul class="nav">
-          <li><a href="jobs.html" target="_blank"><i class="fa-solid fa-briefcase"></i> Jobs</a></li>
+          <li><a href="jobs.html"><i class="fa-solid fa-briefcase"></i> Jobs</a></li>
           <li><a href="networks.html"><i class="fa-solid fa-users"></i> Network</a></li>
           <li><a href="resources.html"><i class="fa-solid fa-book"></i> Resources</a></li>
-          <li><a href="signup.html"><i class="fa-solid fa-cloud"></i> Dashboard</a></li>
-          <li><a href="logout.php" class="btn logout">Logout</a></li>
+          <li><a href="dashboard.html"><i class="fa-solid fa-cloud"></i> Dashboard</a></li>
+          <li><a href="logout.php" class="btn logout">Sign Out</a></li>
         </ul>
         <div class="ham-menu"><i class="fa fa-bars"></i></div>
       </nav>
     </div>
   </header>
-  <div class="app">
-    <div class="grid">
 
-      <!-- profile section -->
-      <div class="profile-card" id="profileCard">
-        <div class="profile-pic" id="profilePic">U</div>
-        <div class="profile-name" id="profileName">User Name</div>
-        <div class="profile-bio" id="profileBio">Short bio goes here. Click edit to update.</div>
-        <div class="profile-actions">
-          <button class="btn primary" id="editProfileBtn">Edit Profile</button>
-          <button class="btn ghost" id="viewProfileBtn" onclick="window.open('/html/dashboard.html', '_blank') ">View</button>
+  <!-- Main Dashboard Section -->
+  <section id="hero" class="hero">
+      <!-- Profile + Stats -->
+      <div class="dashboard-grid">
+        <div class="profile-card" id="profileCard">
+            <div class="profile-pic">
+                <h1>U</h1>
+              <!--<img id="welcomeProfilePic" src="/css/img/SE.jpeg" alt="Profile Picture">-->
+            </div>
+          <div class="profile-name" id="profileName">User Name</div>
+          <div class="profile-bio" id="profileBio">Short bio goes here. Click view for profile on dashboard</div>
+          <div class="profile-actions">
+            <button class="btn ghost" id="viewProfileBtn" onclick="window.open('dashboard.html', '_self')">View</button>
+          </div>
+        </div>
+
+        <div class="stats-wrap">
+          <div class="stat">
+            <div class="label">Total Connections Made</div>
+            <div id="connectionsMade" class="value">0</div>
+
+            <div class="label">Total Jobs Applied</div>
+            <div id="jobsApplied" class="value">0</div>
+
+            <div class="label">Pending Applications</div>
+            <div id="jobsPending" class="value">0</div>
+          </div>
         </div>
       </div>
 
-      <!-- stats -->
-      <div class="stats-wrap">
-        <div class="stat">
-          <div class="label">Total Connections Made</div>
-          <div id="connectionsMade" class="value">0</div>
+      <!-- Welcome Message -->
+      <div class="welcome">
+        <h1>Welcome, <?php echo htmlspecialchars($_SESSION["fullname"]); ?> !</h1>
+        <p>You are now logged in to <strong style="color:#77e64c">Seek <span style="color: #235347;">Jobs Ghana</span></strong>.</p>
+        <p>Launch your career with opportunities across the country. Discover, connect, and grow effortlessly</p>
+        <p class="motto">Empowering Ghana's Workforce, One Job at a Time.</p>
+      </div>
+  </section>
 
-          <div class="label">Total Jobs Applied</div>
-          <div id="jobsApplied" class="value">0</div>
+  <section class="cards-grid">
+          <!-- Cards Grid: Jobs, People, Right Column -->
 
-          <div class="label">Pending Applications</div>
-          <div id="jobsPending" class="value">0</div>
+        <!-- Job Postings -->
+        <div class="jobs-card">
+          <div class="section-title">
+            <h2>Job Postings</h2>
+            <div class="controls">
+              <button class="pill" id="filterAll">All</button>
+              <button class="pill" id="filterOpen">Open</button>
+              <button class="pill" id="filterApplied">Applied</button>
+            </div>
+          </div>
+          <div id="jobsList" class="jobs-list"></div>
         </div>
 
-        <div class="hero">
-            <h1>Welcome, <?php echo htmlspecialchars($_SESSION["fullname"]); ?> 👋</h1>
-            <p>You are now logged in to <strong>Seek Jobs Ghana</strong>.</p>
+        <!-- People You May Know -->
+        <div class="people-card">
+          <div class="section-title">
+            <h2>People You May Know</h2>
+            <div class="controls">
+              <button class="pill" id="shufflePeople">Shuffle</button>
+              <button class="pill" id="refreshPeople">Refresh</button>
+            </div>
+          </div>
+          <div class="people-grid" id="peopleList"></div>
         </div>
       </div>
+
+        <!-- Right Column / Quick Actions -->
+        <div class="right-col">
+          <div class="card quick-actions">
+            <div>
+              <h3 style="margin:0">Quick Actions</h3>
+              <div class="muted">Shortcuts</div>
+            </div>
+            <div style="display:flex;gap:8px;margin:5px 0">
+              <button id="addConnection" class="btn primary">Add Connection</button>
+              <button id="applyRandomJob" class="btn apply">Apply Random</button>
+            </div>
+          </div>
+        </div>
+
     </div>
-  </div>
+  </section>
+
+  <footer>
+      <div class="footer">
+        <p style="font-weight: 700; color: #235347;">Empowering Ghana's Workforce, One Job at a Time.</p>
+        <p>&copy; 2025 Seek Jobs Ghana. All rights reserved.</p>
+        <div class="social-icons-footer">
+            <a href="#" target="_blank" class="icon"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" target="_blank" class="icon"><i class="fa-brands fa-x"></i></a>
+            <a href="https://www.instagram.com/_.ricchie/" target="_blank" class="icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/richard-osei-amofa-113414286/?trk=public-profile-join-page" target="_blank" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+  </footer>
   <script>
         // --- mock data ---
     const peopleMock = [
