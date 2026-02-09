@@ -22,7 +22,7 @@ It provides a complete ecosystem for professional growth, from job listings and 
 |-----------|---------------|
 | Frontend | HTML, CSS, JavaScript |
 | Backend | PHP |
-| Database | MySQL (Planned) |
+| Database | MySQL |
 | Version Control | Git & GitHub |
 | Design Tools | Figma, Canva |
 
