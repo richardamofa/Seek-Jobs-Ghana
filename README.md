@@ -33,34 +33,6 @@ It provides a complete ecosystem for professional growth, from job listings and 
 To **empower Ghanaians** with easy access to career opportunities, mentorship, and professional connections, helping every user grow from job seeker to industry leader.
 Also serving as a middleman between the job seeker and the job recruiter. 
 
----
-
-## 🧱 Project Structure
-
-seek-jobs-ghana/
-│
-├── seekjobs.html # Homepage
-├── jobs.html # Jobs Page
-├── career-resources/ # Resume, interview, and development guides
-├── network/ # Networking area
-├── assets/ # Images, CSS, JS files
-├── PHP files/ # Welcome page, signup page, login page, logout page 
-├── db_connect.php/ # Database configuration
-└── contact.php # Contact form handler
-
-## ⚙️ Setup Instructions
-
-1. Clone the repository  
-   ```bash
-   git clone https://github.com/richie-codesxp/seek-jobs-ghana.git
-   cd seek-jobs-ghana
-   
-2. Start your PHP local server
-   php -S localhost:8013
-
-3. Open your browser and visit
-http://localhost: -- almost done
-
 ✨ Author
 
 Richard Amofa (Richie)
